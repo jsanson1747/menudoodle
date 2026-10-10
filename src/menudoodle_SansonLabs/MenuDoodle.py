@@ -87,8 +87,6 @@ class MenuDoodle:
 
                 parent_instance.getScreen().update()
                 
-                    
-            
             def draw(self):
                 turt = self.doodler
                 turt.goto(self.xPos, self.yPos)
