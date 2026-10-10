@@ -29,14 +29,14 @@ outlineWeight --> weight of the outline
 
 EX: ellipse1 = Ellipse(xPos, yPos, A, B, thickness, color = "black", fill = False, half = "full")
 
-xPos -------> x coordinate of the origin of the ellipse
-yPos -------> y coordinate of the origin of the ellipse
-A ----------> Length of the major axis of the ellipse
-B ----------> Length of the minor axis of the ellipse
-thickness --> Thickness of the ellipse
-color ------> Color of the ellipse
-fill -------> Boolean determining whether or not to fill the ellipse
-half -------> What half of the ellipse you want to draw: "full", "top", "bot", "left", "right"
+xPos -----------> x coordinate of the origin of the ellipse
+yPos -----------> y coordinate of the origin of the ellipse
+A --------------> Length of the major axis of the ellipse
+B --------------> Length of the minor axis of the ellipse
+outlineWeight --> Thickness of the ellipse
+color ----------> Color of the ellipse
+fill -----------> Boolean determining whether or not to fill the ellipse
+half -----------> What half of the ellipse you want to draw: "full", "top", "bot", "left", "right"
 
 ╔─────────────╗
 │Button class │
@@ -49,7 +49,7 @@ xPos --------------> x coordinate of the center of the button
 yPos --------------> y coordinate of the center of the button
 length ------------> length stretch factor of button
 width -------------> width stretch factir of button
-outlineThickness --> Thickness of button outline
+outlineWeight -----> Thickness of button outline
 color -------------> Color of button
 pressedColor ------> Color of button when pressed
 shape -------------> Shape of button: "square", "triangle", "circle", "arrow", "turtle", "classic"
