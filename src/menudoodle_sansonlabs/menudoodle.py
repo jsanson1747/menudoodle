@@ -8,7 +8,6 @@
 ##################################
 
 import math
-import time
 import tkinter as tk
 import turtle
 
