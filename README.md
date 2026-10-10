@@ -16,10 +16,10 @@ Create a window, then create drawing objects from that `MenuDoodle` instance:
 ```python
 from menudoodle import MenuDoodle
 
-doodle = MenuDoodle(width=800, height=480, bgcolor="white", tracer=100)
-box = doodle.Box(200, 100, 0, 0, fillColor="lime")
+doodler = MenuDoodle(width=800, height=480, bgcolor="white", tracer=100)
+box = doodler.Box(200, 100, 0, 0, fillColor="lime")
 box.draw()
-doodle.mainloop()
+doodler.mainloop()
 ```
 
 ### MenuDoodle
@@ -35,7 +35,7 @@ MenuDoodle(width=800, height=480, bgcolor="white", tracer=100)
 ### Box
 
 ```python
-doodle.Box(length, width, xPos, yPos, *, fill=True, fillColor="black",
+doodler.Box(length, width, xPos, yPos, *, fill=True, fillColor="black",
 		   outline=True, outlineColor="black", outlineWeight=4)
 ```
 
@@ -52,7 +52,7 @@ Call `draw()` to render the box.
 ### Ellipse
 
 ```python
-doodle.Ellipse(xPos, yPos, A, B, *, color="black", fill=False,
+doodler.Ellipse(xPos, yPos, A, B, *, color="black", fill=False,
 			   half="full", outlineWeight=4)
 ```
 
@@ -68,7 +68,7 @@ Call `draw()` to render the ellipse.
 ### Button
 
 ```python
-doodle.Button(xPos, yPos, length, width, *, onClick=None, button=1,
+doodler.Button(xPos, yPos, length, width, *, onClick=None, button=1,
 			  color="lime", pressedColor="green", shape="square",
 			  angle=0, outlineWeight=4)
 ```
@@ -86,7 +86,7 @@ doodle.Button(xPos, yPos, length, width, *, onClick=None, button=1,
 ### Text
 
 ```python
-doodle.Text(xPos, yPos, text, *, fontColor="black", alignment="center",
+doodler.Text(xPos, yPos, text, *, fontColor="black", alignment="center",
 			font="Arial", fontSize=12, fontType="normal")
 ```
 
@@ -103,7 +103,7 @@ Call `print()` to render the text. Use `setText(newText)` to change it before pr
 ### Loader
 
 ```python
-doodle.Loader(xPos, yPos, size, *, loaderColor="black",
+doodler.Loader(xPos, yPos, size, *, loaderColor="black",
 			  eraserColor="white", outlineWeight=4)
 ```
 
