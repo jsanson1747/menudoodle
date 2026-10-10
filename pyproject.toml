@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "menudoodle"
+version = "1.0.0"
+license-files = ["LICENSE"]
+dependencies = []
+requires-python = ">=3.11"
+authors = [
+  {name = "Jacob Sanson"},
+]
+readme = "README.md"
