@@ -3,14 +3,17 @@ name: Publish to PyPi
 on:
   release:
     types: [published]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
 
 jobs:
-  build-and-publish:
+  build:
     runs-on: ubuntu-latest
-    
-    # Crucial permission for Trusted Publishing
+
     permissions:
-      id-token: write
       contents: read
 
     steps:
@@ -23,10 +26,48 @@ jobs:
           python-version: "3.x"
 
       - name: Install build tools
-        run: pip install build
+        run: pip install build twine
+
+      - name: Verify release tag matches project version
+        if: github.event_name == 'release'
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          VERSION=$(python -c "import tomllib; print(tomllib.load(open('pyproject.toml', 'rb'))['project']['version'])")
+          if [ "$TAG" != "$VERSION" ]; then
+            echo "::error::Release tag ($GITHUB_REF_NAME) does not match pyproject.toml version ($VERSION)"
+            exit 1
+          fi
 
       - name: Build source and wheel distributions
         run: python -m build
+
+      - name: Check distribution metadata
+        run: twine check dist/*
+
+      - name: Upload distributions
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+    environment:
+      name: pypi
+      url: https://pypi.org/project/menudoodle/
+
+    # Crucial permission for Trusted Publishing
+    permissions:
+      id-token: write
+
+    steps:
+      - name: Download distributions
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
 
       - name: Publish package distribution to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

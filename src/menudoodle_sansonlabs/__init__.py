@@ -1,1 +1,1 @@
-from menudoodle import MenuDoodle
+from menudoodle_sansonlabs.menudoodle import MenuDoodle
