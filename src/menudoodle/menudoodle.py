@@ -81,7 +81,7 @@ class MenuDoodle:
 
                 #Define Turtles
                 try:
-                    self.doodler = turtle.RawTurtle(parent_instance.getScreen())
+                    self.doodler = turtle.RawTurtle(parent_instance.getScreen(), visible = False)
                 except NameError:
                     raise Exception("ERROR: Screen Not Defined: Ensure MenuDoodle is properly initialized")
 
@@ -163,7 +163,7 @@ class MenuDoodle:
 
                 #Define Turtles
                 try:
-                    self.doodler = turtle.RawTurtle(parent_instance.getScreen())
+                    self.doodler = turtle.RawTurtle(parent_instance.getScreen(), visible = False)
                 except NameError:
                     raise Exception("ERROR: Screen Not Defined: Ensure MenuDoodle is properly initialized")
 
@@ -281,7 +281,7 @@ class MenuDoodle:
 
                 #Define Turtles
                 try:
-                    self.doodler = turtle.RawTurtle(parent_instance.getScreen())
+                    self.doodler = turtle.RawTurtle(parent_instance.getScreen(), visible = False)
                 except NameError:
                     raise Exception("ERROR: Screen Not Defined: Ensure MenuDoodle is properly initialized")
 
@@ -342,7 +342,7 @@ class MenuDoodle:
 
                 #Define Turtles
                 try:
-                    self.doodler = turtle.RawTurtle(parent_instance.getScreen())
+                    self.doodler = turtle.RawTurtle(parent_instance.getScreen(), visible = False)
                 except NameError:
                     raise Exception("ERROR: Screen Not Defined: Ensure MenuDoodle is properly initialized")
 
