@@ -130,6 +130,11 @@ class MenuDoodle:
                 if self.outline:
                     turt.pencolor(self.outlineColor)
                     self.__drawOutline(turt)
+
+            def clear(self):
+                """Erase the box from the screen. Call draw() to show it again."""
+                self.doodler.clear()
+                parent_instance.getScreen().update()
         return Box
 
     @property
@@ -243,6 +248,11 @@ class MenuDoodle:
                 if self.fill:
                     turt.end_fill()
                 parent_instance.getScreen().update()
+
+            def clear(self):
+                """Erase the ellipse from the screen. Call draw() to show it again."""
+                self.doodler.clear()
+                parent_instance.getScreen().update()
         return Ellipse
 
     @property
@@ -309,6 +319,16 @@ class MenuDoodle:
                 parent_instance.getScreen().update()
                 if self.__onClick:
                     self.__onClick()
+
+            def show(self):
+                """Show the button (it is already shown on creation)."""
+                self.doodler.showturtle()
+                parent_instance.getScreen().update()
+
+            def hide(self):
+                """Hide the button; a hidden button doesn't receive clicks. Call show() to show it again."""
+                self.doodler.hideturtle()
+                parent_instance.getScreen().update()
         return Button
 
     @property
@@ -360,6 +380,11 @@ class MenuDoodle:
                 self.doodler.clear()
                 self.doodler.goto(self.xPos, self.yPos)
                 self.doodler.write(self.text, False, self.alignment, font = (self.font, self.fontSize, self.fontType))
+                parent_instance.getScreen().update()
+
+            def clear(self):
+                """Erase the text from the screen. Call print() to show it again."""
+                self.doodler.clear()
                 parent_instance.getScreen().update()
         return Text
 

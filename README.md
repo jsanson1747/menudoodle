@@ -47,7 +47,7 @@ doodler.Box(length, width, xPos, yPos, *, fill=True, fillColor="black",
 - `outlineColor`: Outline color.
 - `outlineWeight`: Outline thickness.
 
-Call `draw()` to render the box.
+Call `draw()` to render the box. Call `clear()` to erase it; `draw()` can be called again later to redraw it.
 
 ### Ellipse
 
@@ -63,7 +63,7 @@ doodler.Ellipse(xPos, yPos, A, B, *, color="black", fill=False,
 - `half`: Portion to draw: `"full"`, `"top"`, `"bottom"`, `"left"`, or `"right"`.
 - `outlineWeight`: Outline thickness.
 
-Call `draw()` to render the ellipse.
+Call `draw()` to render the ellipse. Call `clear()` to erase it; `draw()` can be called again later to redraw it.
 
 ### Button
 
@@ -83,6 +83,8 @@ doodler.Button(xPos, yPos, length, width, *, onClick=None, button=1,
 - `angle`: Shape heading in degrees.
 - `outlineWeight`: Outline thickness.
 
+The button is visible when created. Call `hide()` to hide it (a hidden button doesn't receive clicks) and `show()` to make it visible again.
+
 ### Text
 
 ```python
@@ -98,7 +100,7 @@ doodler.Text(xPos, yPos, text, *, fontColor="black", alignment="center",
 - `fontSize`: Font size.
 - `fontType`: Font style, such as `"normal"`, `"bold"`, or `"italic"`.
 
-Call `print()` to render the text. Use `setText(newText)` to change it before printing again.
+Call `print()` to render the text. Use `setText(newText)` to change it before printing again. Call `clear()` to erase it; `print()` can be called again later to redraw it.
 
 ### Loader
 
